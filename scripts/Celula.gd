@@ -1,6 +1,7 @@
 extends Node
 
 var organela = preload("res://scenes/Organelas.tscn")
+var lista = preload("res://scripts/ActionList.gd")
 var raio = 300
 var y = 0.0
 var x = 0.0
@@ -8,6 +9,11 @@ var x = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var temp = lista.new()
+	temp.add_lista(1,3,55)
+	temp.add_lista(1, 2, 15)
+	temp.add_lista(2, 5, 75)
+	temp.add_lista(3, 1, 5)
 	gerar_membrana()
 
 
