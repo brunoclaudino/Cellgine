@@ -1,40 +1,25 @@
 extends Node
 
-var lista = []
+var lista = []                                # Vetor de vetores que receberá as ações pra ser executados em ordem te tempo
+var executando = true
+var tempo_execucao = 0
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
-func add_lista(id, tipo, tempo):
-	#var temp = acao.new()
-	#temp.define_vars(id, tipo, tempo)
-	lista.append([id, tipo, tempo])
-	lista.sort_custom(ordenador_curtom, "ordenar_cresc")
-	print(lista)
+func add_lista(organela, tipo, tempo):
+	lista.append([organela, tipo, tempo])                                       # Add na lista
+	lista.sort_custom(ordenador_curtom, "ordenar_cresc")                        # Chama ordenador customizado
+	print(lista)                                                                # Printa a lista na ordem
 	
-class ordenador_curtom:
-	static func ordenar_cresc(a, b):
-		if a[2] < b[2]:
+class ordenador_curtom:                                                         # Classe de ordenação customizada do array
+	static func ordenar_cresc(a, b):                                            # Func que ordena em ordem crescente
+		if a[2] < b[2]:                                                         # Usa o terceiro atributo do array, ou seja, o tempo
 			return true
 		return false
 
-class acao:
-	var celula_id
-	var tipo_acao
-	var tempo_inicio
-
-	func define_vars(id, tipo, tempo):
-		self.celula_id = id
-		self.tipo_acao = tipo
-		self.tempo_inicio = tempo
-
-	func pega_id():
-		return self.celula_id
-
-	func pega_acao():
-		return self.tipo_acao
-
-	func pega_tempo():
-		return self.tempo_inicio
+func executar():                                                                # Func chamada quando for executado a simulação (em tese)
+	var i = 0
+	while executando and tempo_execucao < lista.back()[2]:
+		if lista[1][1] == 1:
+			print('Operação 1')
