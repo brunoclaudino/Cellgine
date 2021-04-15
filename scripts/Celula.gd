@@ -2,6 +2,7 @@ extends Node
 
 var organela = preload("res://scenes/Organelas.tscn")
 var lista = preload("res://scripts/ActionList.gd")
+var celula = preload("res://scenes/Celula.tscn")
 var raio = 300
 var y = 0.0
 var x = 0.0
@@ -36,4 +37,5 @@ func gerar_membrana():
 		x += 30
 		i += 1
 
-
+func divisao_celular():
+	var pos_centro = $
