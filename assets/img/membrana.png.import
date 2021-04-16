@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/membrana.png-d0ef44e2170f3660c1b763211ac86946.stex"
+path="res://.import/membrana.png-4152120925347fb096c902518537cfd6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/membrana.png"
-dest_files=[ "res://.import/membrana.png-d0ef44e2170f3660c1b763211ac86946.stex" ]
+source_file="res://assets/img/membrana.png"
+dest_files=[ "res://.import/membrana.png-4152120925347fb096c902518537cfd6.stex" ]
 
 [params]
 
