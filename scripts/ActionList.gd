@@ -1,5 +1,5 @@
 extends Node
-
+#Lista de ações que vai ser executadas
 var lista = []                                # Vetor de vetores que receberá as ações pra ser executados em ordem te tempo
 var executando = true
 var tempo_execucao = 0
