@@ -10,7 +10,6 @@ var descricao = ['Transforma uma molécula de glicose em 37 ATPs.']
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Sprite.texture = spt
 	pass # Replace with function body.
 
 

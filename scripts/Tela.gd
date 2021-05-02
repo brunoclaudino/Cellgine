@@ -21,7 +21,7 @@ func divisao_celular(inicial):                                                  
 	var i = 0
 	var a = pos_inici
 	var b = pos_inici
-	while i < 100:
+	while i < 200:
 		inicial.mudar_pos(a, -1, 0)                                             # Mudar a posição para a esquerda
 		duplicata.mudar_pos(b, 1, 0)                                            # Muda a posição antes de deixar visivel
 		a += Vector2(-1, 0)
@@ -29,3 +29,5 @@ func divisao_celular(inicial):                                                  
 		yield(get_tree().create_timer(0.01), "timeout")
 		i+=1
 	duplicata.voltar_textura()                                                  # Deixa a membrana visivel
+	duplicata.estruturas = inicial.copiar_estruturas()
+	duplicata.construir_estruturas()

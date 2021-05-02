@@ -49,7 +49,7 @@ func construir_estruturas():                                                    
 	var i = 0
 	while i<13:
 		if estruturas[i] > 0:
-			carregar_estrutura(0)
+			carregar_estrutura(i)
 		i+=1
 
 func carregar_estrutura(index):                                                 # Switch para chamada de criação de organelas
@@ -63,47 +63,47 @@ func carregar_estrutura(index):                                                 
 			var golgi = load('res://scenes/Golgi.tscn')
 			var temp = golgi.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(0, 250)
+			temp.position = $Position2D.position + Vector2(0, 50)
 		2:
 			var clorop = load('res://scenes/Cloroplastos.tscn')
 			var temp = clorop.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(0, 250)
+			temp.position = $Position2D.position + Vector2(0, 50)
 		3:
 			var liso = load('res://scenes/Lisossomos.tscn')
 			var temp = liso.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(200, 200)
+			temp.position = $Position2D.position + Vector2(40, 40)
 		4:
 			var mito = load('res://scenes/Mitocondria.tscn')
 			var temp = mito.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(-100, -300)
+			temp.position = $Position2D.position + Vector2(-20, -60)
 		5:
 			var peri = load('res://scenes/Peroxissomos.tscn')
 			var temp = peri.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(-300, -300)
+			temp.position = $Position2D.position + Vector2(-60, -60)
 		6:
 			var rel = load('res://scenes/REL.tscn')
 			var temp = rel.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(100, 300)
+			temp.position = $Position2D.position + Vector2(20, 60)
 		7:
 			var rer = load('res://scenes/RER.tscn')
 			var temp = rer.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(-200, 300)
+			temp.position = $Position2D.position + Vector2(-40, 60)
 		8:
 			var ribo = load('res://scenes/Ribossomos.tscn')
 			var temp = ribo.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(-100, 0)
+			temp.position = $Position2D.position + Vector2(-20, 0)
 		9:
 			var vac = load('res://scenes/Vacuolo.tscn')
 			var temp = vac.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(200, 200)
+			temp.position = $Position2D.position + Vector2(40, 40)
 		10:
 			pass
 		11:
