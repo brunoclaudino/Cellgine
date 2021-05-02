@@ -8,6 +8,8 @@ func _ready():
 	var temp = celula.instance()                                                # Testando a duplicata logo
 	add_child(temp)
 	temp.mudar_pos(Vector2(0,0), 500, 300)
+	temp.add_estrutura(4)
+	temp.construir_estruturas()
 	divisao_celular(temp)
 
 

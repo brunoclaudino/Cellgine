@@ -39,7 +39,13 @@ func membr_invisivel():                                                         
 	$Membrana.play("invisivel", false)
 	p.invisivel()
 
-func add_estruturas():                                                          # Func para colocar as organelas
+func add_estrutura(index):
+	estruturas[index] += 1
+
+func copiar_estruturas():
+	return estruturas.duplicate()
+	
+func construir_estruturas():                                                    # Func para colocar as organelas
 	var i = 0
 	while i<13:
 		if estruturas[i] > 0:
