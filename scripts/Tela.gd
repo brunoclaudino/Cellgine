@@ -19,15 +19,13 @@ func divisao_celular(inicial):                                                  
 	add_child(duplicata)                                                        # Adiciona ela ao mesmo pai da original
 	duplicata.membr_invisivel()                                                 # Deixa a membrana da célula invisivel
 	var i = 0
-	var a = pos_inici
-	var b = pos_inici
-	while i < 200:
-		inicial.mudar_pos(a, -1, 0)                                             # Mudar a posição para a esquerda
-		duplicata.mudar_pos(b, 1, 0)                                            # Muda a posição antes de deixar visivel
-		a += Vector2(-1, 0)
-		b += Vector2(1, 0)
-		yield(get_tree().create_timer(0.01), "timeout")
+	inicial.anima_divisao()
+	while i < 20:
+		yield(get_tree().create_timer(0.1), "timeout")
 		i+=1
+	inicial.mudar_pos(pos_inici, -113, 0)
+	duplicata.mudar_pos(pos_inici, 113, 0)
+	inicial.voltar_textura()
 	duplicata.voltar_textura()                                                  # Deixa a membrana visivel
 	duplicata.estruturas = inicial.copiar_estruturas()
 	duplicata.construir_estruturas()

@@ -1,8 +1,7 @@
 extends Node
 #Lista de ações que vai ser executadas
-var lista = []                                # Vetor de vetores que receberá as ações pra ser executados em ordem te tempo
-var executando = true
-var tempo_execucao = 0
+var lista = []                                                                  # recebe as ações pra ser executados em ordem te tempo
+var timer
 
 func _ready():
 	pass
@@ -18,8 +17,15 @@ class ordenador_curtom:                                                         
 			return true
 		return false
 
-func executar():                                                                # Func chamada quando for executado a simulação (em tese)
-	var i = 0
-	while executando and tempo_execucao < lista.back()[2]:
-		if lista[1][1] == 1:
-			print('Operação 1')
+func executar(tempMax):                                                         # Func chamada quando for executado a simulação (em tese)
+	timer = iniciar_timer(tempMax)
+	while timer.time_left() <= lista[-1][2]:
+		if not timer.is_stopped():
+			if lista[1][1] == 1:
+				print('Operação 1')
+
+func iniciar_timer(tempMax):
+	timer = get_tree().create_timer(tempMax)
+	timer.set_wait_time(10)
+	yield(timer,"timeout")
+	

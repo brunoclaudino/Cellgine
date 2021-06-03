@@ -19,7 +19,7 @@ var x = 0.0
 
 func _ready():
 	$Membrana.add_child(p)
-	p.position = $Position2D.position + Vector2(-750,0)
+	p.position = $Position2D.position + Vector2(-475,0)                         # Seta a posição da proteína
 	var temp = lista.new()                                                      # Testando add coisas na lista
 	temp.add_lista(1,3,55)
 	temp.add_lista(1, 2, 15)
@@ -44,6 +44,9 @@ func add_estrutura(index):
 
 func copiar_estruturas():
 	return estruturas.duplicate()
+
+func anima_divisao():
+	$Membrana.play("division", false)
 	
 func construir_estruturas():                                                    # Func para colocar as organelas
 	var i = 0
@@ -78,7 +81,7 @@ func carregar_estrutura(index):                                                 
 			var mito = load('res://scenes/Mitocondria.tscn')
 			var temp = mito.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(-20, -60)
+			temp.position = $Position2D.position + Vector2(-20, -30)
 		5:
 			var peri = load('res://scenes/Peroxissomos.tscn')
 			var temp = peri.instance()
