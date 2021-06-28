@@ -27,7 +27,7 @@ func bomba_Na_Cl(quant):                                                        
 			i += 1
 	elif quant == 0:                                                            # Se quant for = 0, a animação ocorre pra sempre
 		while true:
-			$Texttura.play('bombaNaCl')
+			$Textura.play('bombaNaCl')
 			while($Textura.is_playing()):
 				pass
 	else:                                                                       # Se o valor for < 0, erro!

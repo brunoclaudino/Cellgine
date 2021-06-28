@@ -56,57 +56,72 @@ func construir_estruturas():                                                    
 		i+=1
 
 func carregar_estrutura(index):                                                 # Switch para chamada de criação de organelas
+	print("--- Estruturas presentes na célula")
 	match index:
 		0:
 			var nucleo = load('res://scenes/Nucleo.tscn')
 			var temp = nucleo.instance()
 			add_child(temp)
 			temp.position = $Position2D.position
+			print("Núcleo adicionado")
 		1:
 			var golgi = load('res://scenes/Golgi.tscn')
 			var temp = golgi.instance()
 			add_child(temp)
 			temp.position = $Position2D.position + Vector2(0, 50)
+			print("Complexo de Golgi adicionado")
 		2:
 			var clorop = load('res://scenes/Cloroplastos.tscn')
 			var temp = clorop.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(0, 50)
+			temp.position = $Position2D.position + Vector2(0, 150)
+			temp.get_child(0).scale.y = 0.1
+			temp.get_child(0).scale.x = 0.1
+			print("Cloroplasto adicionado")
 		3:
 			var liso = load('res://scenes/Lisossomos.tscn')
 			var temp = liso.instance()
 			add_child(temp)
 			temp.position = $Position2D.position + Vector2(40, 40)
+			print("Lisossomo adicionado")
 		4:
 			var mito = load('res://scenes/Mitocondria.tscn')
 			var temp = mito.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(-20, -30)
+			temp.position = $Position2D.position + Vector2(150, -30)
+			temp.get_child(0).scale.y = 0.09
+			temp.get_child(0).scale.x = 0.09
+			print("Mitocondria adicionada")
 		5:
 			var peri = load('res://scenes/Peroxissomos.tscn')
 			var temp = peri.instance()
 			add_child(temp)
 			temp.position = $Position2D.position + Vector2(-60, -60)
+			print("Peroxissomo adicionado")
 		6:
 			var rel = load('res://scenes/REL.tscn')
 			var temp = rel.instance()
 			add_child(temp)
 			temp.position = $Position2D.position + Vector2(20, 60)
+			print("Retículo Endoplasmático Liso adicionado")
 		7:
 			var rer = load('res://scenes/RER.tscn')
 			var temp = rer.instance()
 			add_child(temp)
 			temp.position = $Position2D.position + Vector2(-40, 60)
+			print("Retículo Endoplasmático Rugoso adicionado")
 		8:
 			var ribo = load('res://scenes/Ribossomos.tscn')
 			var temp = ribo.instance()
 			add_child(temp)
 			temp.position = $Position2D.position + Vector2(-20, 0)
+			print("Ribossomo adicionado")
 		9:
 			var vac = load('res://scenes/Vacuolo.tscn')
 			var temp = vac.instance()
 			add_child(temp)
 			temp.position = $Position2D.position + Vector2(40, 40)
+			print("Vacúolo adicionado")
 		10:
 			pass
 		11:

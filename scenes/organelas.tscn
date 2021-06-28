@@ -359,4 +359,19 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control/Button" to="." method="_add_cloroplasto"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control2/Button" to="." method="_add_mitocondria"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control3/Button" to="." method="_add_memb_nucl"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control4/Button" to="." method="_add_lisossomo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control5/Button" to="." method="_add_ret_end_rugo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control6/Button" to="." method="_add_ret_end_liso"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control7/Button" to="." method="__add_comp_golgi"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control8/Button" to="." method="_add_vacuolo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control9/Button" to="." method="_add_peroxissomo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control10/Button" to="." method="_add_plasmideo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control11/Button" to="." method="_add_na+"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control12/Button" to="." method="_add_cl_menos"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control13/Button" to="." method="_add_k"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control14/Button" to="." method="_add_p"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control15/Button" to="." method="_add_dna"]
 [connection signal="pressed" from="Control/close" to="." method="_on_close_pressed"]

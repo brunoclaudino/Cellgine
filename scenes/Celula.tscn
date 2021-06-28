@@ -38,5 +38,7 @@ script = ExtResource( 1 )
 [node name="Position2D" type="Position2D" parent="."]
 
 [node name="Membrana" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.164, 0.164 )
+position = Vector2( 0.505314, 0.770021 )
+scale = Vector2( 0.210622, 0.210622 )
 frames = SubResource( 1 )
+animation = "division"
