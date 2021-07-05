@@ -1,6 +1,5 @@
 extends Node2D
 
-var spt #= preload('') lembrar de passar o sprite quando tiver
 var posicao_pai                          # Em tese vai armazenar a posição do ponto central do pai
 var id
 var nome = 'Retículo Endoplasmático Liso (R.E.L)'
@@ -13,7 +12,6 @@ var descricao = ['Principal função é a sintese de lipídeos.',
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Sprite.texture = spt
 	pass # Replace with function body.
 
 

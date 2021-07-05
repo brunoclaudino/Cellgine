@@ -8,10 +8,10 @@ func _ready():
 
 func add_lista(organela, tipo, tempo):
 	lista.append([organela, tipo, tempo])                                       # Add na lista
-	lista.sort_custom(ordenador_curtom, "ordenar_cresc")                        # Chama ordenador customizado
+	lista.sort_custom(ordenador_custom, "ordenar_cresc")                        # Chama ordenador customizado
 	print(lista)                                                                # Printa a lista na ordem
 	
-class ordenador_curtom:                                                         # Classe de ordenação customizada do array
+class ordenador_custom:                                                         # Classe de ordenação customizada do array
 	static func ordenar_cresc(a, b):                                            # Func que ordena em ordem crescente
 		if a[2] < b[2]:                                                         # Usa o terceiro atributo do array, ou seja, o tempo
 			return true
