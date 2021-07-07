@@ -8,11 +8,25 @@ var descricao = ['Funciona como \"Correios\" das células, pois empacota as prot
 'Termina a formação do Lisossomos (organela digestiva) que é feita no R.E.R mas amadurecida no complexo de Golgi',
 'Pode formar o acrossomo da cabeça do espermatozóide, contendo enzimas que ajudarão na penetração do óvulo',
 'Armazena temporariamente algumas proteínas']
+var mouse_entrou = false
+var caixa_descricao
+var podefazer = true
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+func _process(delta):
+	if mouse_entrou and Input.is_action_pressed("left_click"):
+		if podefazer:
+			caixa_descricao = load('res://scenes/CaixaInfo.tscn')
+			var temp = caixa_descricao.instance()
+			temp.seta_info(descricao)
+			temp.mostra_texto()
+			add_child(temp)
+			print('Criou Caixa')
+			podefazer = false
 
 func define_id(numero):
 	self.id = numero
@@ -22,3 +36,11 @@ func em_mitose():
 
 func define_posicao_pai(numero):
 	self.posicao_pai = numero
+
+
+func _on_Area2D_mouse_entered():
+	mouse_entrou = true
+
+
+func _on_Area2D_mouse_exited():
+	mouse_entrou = false

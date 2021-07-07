@@ -28,9 +28,9 @@ func _ready():
 func _process(delta):
 	if mouse_entrou && Input.is_action_pressed("left_click"):
 		self.position = get_viewport().get_mouse_position()
-	else:
-		if Input.is_action_just_pressed("left_click"):
-			self.scale += Vector2(0.1, 0.1)
+	#else:
+		#if Input.is_action_just_pressed("left_click"):
+			#self.scale += Vector2(0.1, 0.1)
 
 func voltar_textura():                                                          # Volta a textura para a default
 	$Membrana.play("default", false)
@@ -144,8 +144,6 @@ func carregar_estrutura(index):                                                 
 			pass
 		_:
 			print("Valor inesperado de index de estrutura")
-
-
 
 func _on_Area2D_mouse_entered():
 	mouse_entrou = true
