@@ -8,6 +8,7 @@ var descricao = ['Funciona como \"Correios\" das células, pois empacota as prot
 'Termina a formação do Lisossomos (organela digestiva) que é feita no R.E.R mas amadurecida no complexo de Golgi',
 'Pode formar o acrossomo da cabeça do espermatozóide, contendo enzimas que ajudarão na penetração do óvulo',
 'Armazena temporariamente algumas proteínas']
+# Variáveis para fazer a caixa de descrição das organelas aparecer
 var mouse_entrou = false
 var caixa_descricao
 var podefazer = true
@@ -22,8 +23,8 @@ func _process(delta):
 		if podefazer:
 			caixa_descricao = load('res://scenes/CaixaInfo.tscn')
 			var temp = caixa_descricao.instance()
-			temp.seta_info(descricao)
-			temp.mostra_texto()
+			temp.seta_info(nome, resumo, descricao)
+			temp.scale = Vector2(1.5, 1.5)
 			add_child(temp)
 			print('Criou Caixa')
 			podefazer = false

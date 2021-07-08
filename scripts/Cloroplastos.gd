@@ -5,16 +5,26 @@ var id
 var nome = 'Cloroplastos'
 var resumo = 'Fotossíntese'
 var descricao = ['Cloroplastos é o mais famoso dos plastos por apresentear a pigmentação verde e ser responsável pela fotossíntese.']
-
+# Variáveis para fazer a caixa de descrição das organelas aparecer
+var mouse_entrou = false
+var caixa_descricao
+var podefazer = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if mouse_entrou and Input.is_action_pressed("left_click"):
+		if podefazer:
+			caixa_descricao = load('res://scenes/CaixaInfo.tscn')
+			var temp = caixa_descricao.instance()
+			temp.seta_info(nome, resumo, descricao)
+			temp.scale = Vector2(1.5, 1.5)
+			add_child(temp)
+			print('Criou Caixa')
+			podefazer = false
 
 
 func define_id(numero):
@@ -25,3 +35,11 @@ func em_mitose():
 
 func define_posicao_pai(numero):
 	self.posicao_pai = numero
+
+
+func _on_Area2D_mouse_entered():
+	mouse_entrou = true
+
+
+func _on_Area2D_mouse_exited():
+	mouse_entrou = false

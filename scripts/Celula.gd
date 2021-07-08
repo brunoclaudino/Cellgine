@@ -26,11 +26,12 @@ func _ready():
 	temp.add_lista(3, 1, 5)
 
 func _process(delta):
-	if mouse_entrou && Input.is_action_pressed("left_click"):
-		self.position = get_viewport().get_mouse_position()
+	if mouse_entrou: # && Input.is_action_pressed("left_click"):
+		#self.position = get_viewport().get_mouse_position()
+		pass
 	#else:
-		#if Input.is_action_just_pressed("left_click"):
-			#self.scale += Vector2(0.1, 0.1)
+	elif Input.is_action_just_pressed("left_click"):
+		self.scale += Vector2(0.1, 0.1)
 
 func voltar_textura():                                                          # Volta a textura para a default
 	$Membrana.play("default", false)

@@ -9,10 +9,15 @@ var mouse_entrou = false
 func _ready():
 	$BotaoVoltar.visible = false
 	$Voltar.visible = false
+	#$Resumo/Nome.ALIGN_CENTER = true
+	#$Resumo/InfoResumo.ALIGN_CENTER = true
 
 
-func seta_info(desc):
+func seta_info(nome, res, desc):
+	$Resumo/Nome.text = nome
+	$Resumo/InfoResumo.text = res
 	self.info = desc
+	$Texto.text = info[pagina]
 
 func mostra_texto():
 	$Texto.text = info[pagina]
@@ -25,7 +30,7 @@ func _on_BotaoProx_pressed():
 	if pagina == (info.size()-1):
 		$BotaoProx.visible = false
 		$Prox.visible = false
-	mostra_texto()
+	$Texto.text = info[pagina]
 
 
 func _on_BotaoVoltar_pressed():
@@ -36,7 +41,7 @@ func _on_BotaoVoltar_pressed():
 		if pagina < 1:
 			$BotaoVoltar.visible = false
 			$Voltar.visible = false
-	mostra_texto()
+	$Texto.text = info[pagina]
 
 
 func _on_Fechar_pressed():

@@ -1,10 +1,16 @@
 extends Node
 
-var textura = preload("res://icon.png")
 var id
-var nome
-var descri
-
+var nome = 'Proteína Transmembranar'
+var resumo = 'Transporte de substâncias'
+var descricao = ['Proteínas Trabsmembranares atravessam toda a membrana plasmática.',
+'Principal função é o transporte de substâncias de forma ativa.',
+'Através delas acontece a Bomba de sódio-potássio.',
+'Pelas proteínas também podem passar moléculas maiores e elétrons']
+# Variáveis para fazer a caixa de descrição das organelas aparecer
+var mouse_entrou = false
+var caixa_descricao
+var podefazer = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
