@@ -14,8 +14,9 @@ func _ready():
 	temp.add_estrutura(1)
 	temp.add_estrutura(6)
 	temp.add_estrutura(7)
+	temp.add_estrutura(10)
 	temp.construir_estruturas()
-	#divisao_celular(temp)
+	divisao_celular(temp)
 
 #func _process(delta):
 	#temp.mudar_pos(temp.get_position(), 1, 0)
@@ -26,6 +27,11 @@ func divisao_celular(inicial):                                                  
 	add_child(duplicata)                                                        # Adiciona ela ao mesmo pai da original
 	duplicata.membr_invisivel()                                                 # Deixa a membrana da célula invisivel
 	var i = 0
+	for organela in inicial.get_children():
+		if not organela.get('nome') == null:
+			print(organela.nome)
+			if not organela.nome in ['DNA', 'Membrana', 'Nucleo']:
+				organela.visible = false
 	inicial.anima_divisao()
 	while i < 20:
 		yield(get_tree().create_timer(0.1), "timeout")
@@ -36,3 +42,5 @@ func divisao_celular(inicial):                                                  
 	duplicata.voltar_textura()                                                  # Deixa a membrana visivel
 	duplicata.estruturas = inicial.copiar_estruturas()
 	duplicata.construir_estruturas()
+	for organela in inicial.get_children():
+		organela.visible = true

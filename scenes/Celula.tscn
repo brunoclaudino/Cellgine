@@ -73,6 +73,9 @@ position = Vector2( -304, 0 )
 [node name="Vacuolo" type="Position2D" parent="."]
 position = Vector2( 298, -106 )
 
+[node name="Proteina" type="Position2D" parent="."]
+position = Vector2( -478.228, 3.17838 )
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

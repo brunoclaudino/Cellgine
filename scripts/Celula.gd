@@ -1,6 +1,6 @@
 extends Node
 
-var protein = preload("res://scenes/proteina.tscn")
+var protein = preload("res://scenes/Proteina.tscn")
 var lista = preload("res://scripts/ActionList.gd")
 
 #lita de caminhos para fazer load nas estruturas sem ter que deixar tudo em preload
@@ -9,16 +9,17 @@ var inst_organ = ["res://scenes/Nucleo.tscn", "res://scenes/Golgi.tscn", "res://
 "res://scenes/REL.tscn", "res://scenes/RER.tscn", "res://scenes/Ribossomos.tscn", "res://scenes/Vacuolo.tscn", 
 "res://scenes/Filamentos.tscn", "res://scenes/Microfilamento.tscn", "res://scenes/Microtubulos.tscn"]
 
-# Nucleo, golgi, cloroplastos, Lisossomos, Mitocondria, Peroxissomos, REL, RER, Ribossomos, Vacuolo
+# Nucleo, golgi, cloroplastos, Lisossomos, Mitocondria, Peroxissomos, REL, RER, Ribossomos, Proteína, Vacuolo
 # Filamentos, Microfilamentos, Microtubulos
-var estruturas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                        # Guarda quais e quantas estruturas tem
-var p = protein.instance()
+var estruturas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                        # Guarda quais e quantas estruturas tem
+#var p = protein.instance()
 var mouse_entrou = false
 
 
 func _ready():
-	$Membrana.add_child(p)
-	p.position = $Position2D.position + Vector2(-475,0)                         # Seta a posição da proteína
+	#p.name = 'Proteína Transmembranar'
+	#$Membrana.add_child(p)
+	#p.position = $Position2D.position + Vector2(-475,0)                         # Seta a posição da proteína
 	var temp = lista.new()                                                      # Testando add coisas na lista
 	temp.add_lista(1,3,55)
 	temp.add_lista(1, 2, 15)
@@ -26,16 +27,16 @@ func _ready():
 	temp.add_lista(3, 1, 5)
 
 func _process(delta):
-	if mouse_entrou: # && Input.is_action_pressed("left_click"):
-		#self.position = get_viewport().get_mouse_position()
+	if mouse_entrou && Input.is_action_pressed("left_click"):
+		self.position = get_viewport().get_mouse_position()
 		pass
 	#else:
-	elif Input.is_action_just_pressed("left_click"):
-		self.scale += Vector2(0.1, 0.1)
+	#elif Input.is_action_just_pressed("left_click"):
+	#	self.scale += Vector2(0.1, 0.1)
 
 func voltar_textura():                                                          # Volta a textura para a default
 	$Membrana.play("default", false)
-	p.visivel()
+	#p.visivel()
 
 func mudar_pos(inicial, altX, altY):                                            # Método para mudar posição mais facilmente por de fora da célula
 	var temp = inicial
@@ -44,7 +45,7 @@ func mudar_pos(inicial, altX, altY):                                            
 
 func membr_invisivel():                                                         # Muda para uma animação sem textura
 	$Membrana.play("invisivel", false)
-	p.invisivel()
+	#p.invisivel()
 
 func add_estrutura(index):
 	estruturas[index] += 1
@@ -138,7 +139,10 @@ func carregar_estrutura(index):                                                 
 			temp.position = $Vacuolo.position
 			print("Vacúolo adicionado")
 		10:
-			pass
+			var temp = protein.instance()
+			add_child(temp)
+			temp.position = $Proteina.position
+			print("Proteína adicionada")
 		11:
 			pass
 		12:
