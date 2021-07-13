@@ -29,25 +29,3 @@ func iniciar_timer(tempMax):
 	timer.set_wait_time(10)
 	yield(timer,"timeout")
 
-func div_celular(inicial):
-	var pos_inici = inicial.get_position()                                          # Posição em que começou a se dividir
-	var duplicata                                     # Nova celula
-	add_child(duplicata)                                                        # Adiciona ela ao mesmo pai da original
-	duplicata.membr_invisivel()                                                 # Deixa a membrana da célula invisivel
-	var i = 0
-	inicial.anima_divisao()
-	while i < 20:
-		yield(get_tree().create_timer(0.1), "timeout")
-		i+=1
-	inicial.mudar_pos(pos_inici, -300, 0)
-	duplicata.mudar_pos(pos_inici, 300, 0)
-	inicial.voltar_textura()
-	duplicata.voltar_textura()                                                  # Deixa a membrana visivel
-	duplicata.estruturas = inicial.copiar_estruturas()
-	duplicata.construir_estruturas()
-
-func bomba_na_cl(celula):
-	pass
-
-func secre_vesicula(celula):
-	pass
