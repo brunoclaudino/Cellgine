@@ -4,15 +4,15 @@
 [ext_resource path="res://assets/img/RER.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 121.167
+radius = 156.838
 height = 503.572
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 53.1347
+radius = 97.6831
 height = 426.144
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 85.6895
+radius = 113.185
 height = 349.939
 
 [node name="RER" type="Node2D"]
@@ -31,13 +31,12 @@ rotation = -0.853466
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -146, -478 )
+position = Vector2( -203.015, -406.323 )
 rotation = 0.366519
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 530, 140 )
+position = Vector2( 585.1, 111.5 )
 rotation = 1.21999
 shape = SubResource( 3 )
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

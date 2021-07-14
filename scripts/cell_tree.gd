@@ -7,7 +7,7 @@ var expandedState = false
 var id
 var cell
 var item_id = 1
-var theme_item = preload("res://styles/treeItemSelected.tres")
+var theme_item = preload("res://assets/styles/treeItemSelected.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

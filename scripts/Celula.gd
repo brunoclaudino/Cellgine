@@ -14,7 +14,7 @@ var inst_organ = ["res://scenes/Nucleo.tscn", "res://scenes/Golgi.tscn", "res://
 var estruturas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                        # Guarda quais e quantas estruturas tem
 #var p = protein.instance()
 var mouse_entrou = false
-
+var drag_enabled = false
 
 func _ready():
 	#p.name = 'Proteína Transmembranar'
@@ -26,13 +26,17 @@ func _ready():
 	temp.add_lista(2, 5, 75)
 	temp.add_lista(3, 1, 5)
 
-func _process(delta):
+func _input(event : InputEvent):
+	if event is InputEventMouseButton:
+		if event.is_pressed(): 
+			if event.button_index == BUTTON_WHEEL_UP: # zoom in
+				self.scale += Vector2(0.1, 0.1)
+				# call the zoom function
+			if event.button_index == BUTTON_WHEEL_DOWN: # zoom out
+				self.scale -= Vector2(0.1, 0.1)
+				# call the zoom function
 	if mouse_entrou && Input.is_action_pressed("left_click"):
-		self.position = get_viewport().get_mouse_position()
-		pass
-	#else:
-	#elif Input.is_action_just_pressed("left_click"):
-	#	self.scale += Vector2(0.1, 0.1)
+		self.position = event.position
 
 func voltar_textura():                                                          # Volta a textura para a default
 	$Membrana.play("default", false)
@@ -73,6 +77,8 @@ func carregar_estrutura(index):                                                 
 			temp.position = $Nucleo.position
 			temp.get_child(0).scale.y = 0.3
 			temp.get_child(0).scale.x = 0.3
+			temp.get_child(1).get_child(0).scale.y = 0.3
+			temp.get_child(1).get_child(0).scale.x = 0.3
 			print("Núcleo adicionado")
 		1:
 			var golgi = load('res://scenes/Golgi.tscn')
@@ -81,6 +87,8 @@ func carregar_estrutura(index):                                                 
 			temp.position = $Golgi.position
 			temp.get_child(0).scale.y = 0.3
 			temp.get_child(0).scale.x = 0.3
+			temp.get_child(1).get_child(0).scale.y = 0.3
+			temp.get_child(1).get_child(0).scale.x = 0.3
 			print("Complexo de Golgi adicionado")
 		2:
 			var clorop = load('res://scenes/Cloroplastos.tscn')
@@ -117,6 +125,8 @@ func carregar_estrutura(index):                                                 
 			temp.position = $REL.position
 			temp.get_child(0).scale.y = 0.3
 			temp.get_child(0).scale.x = 0.3
+			temp.get_child(1).get_child(0).scale.y = 0.3
+			temp.get_child(1).get_child(0).scale.x = 0.3
 			print("Retículo Endoplasmático Liso adicionado")
 		7:
 			var rer = load('res://scenes/RER.tscn')
@@ -125,6 +135,12 @@ func carregar_estrutura(index):                                                 
 			temp.position = $RER.position
 			temp.get_child(0).scale.y = 0.3
 			temp.get_child(0).scale.x = 0.3
+			temp.get_child(1).get_child(0).scale.y = 0.3
+			temp.get_child(1).get_child(1).scale.y = 0.3
+			temp.get_child(1).get_child(2).scale.y = 0.3
+			temp.get_child(1).get_child(0).scale.x = 0.3
+			temp.get_child(1).get_child(1).scale.x = 0.3
+			temp.get_child(1).get_child(2).scale.x = 0.3
 			print("Retículo Endoplasmático Rugoso adicionado")
 		8:
 			var ribo = load('res://scenes/Ribossomos.tscn')

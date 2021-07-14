@@ -1,7 +1,7 @@
 extends MarginContainer
 
 var item_id
-var theme_item = preload("res://styles/treeItemSelected.tres")
+var theme_item = preload("res://assets/styles/treeItemSelected.tres")
 
 
 func _ready():
