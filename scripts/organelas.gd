@@ -13,8 +13,8 @@ func _add_cloroplasto():
 func _add_mitocondria():
 	add_organela(4)
 
-func _add_memb_nucl():
-	pass # Replace with function body.
+func _add_nucleo():
+	add_organela(0)
 
 func _add_lisossomo():
 	add_organela(3)

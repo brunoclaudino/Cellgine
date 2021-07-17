@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var protein = preload("res://scenes/Proteina.tscn")
 var lista = preload("res://scripts/ActionList.gd")
@@ -12,31 +12,20 @@ var inst_organ = ["res://scenes/Nucleo.tscn", "res://scenes/Golgi.tscn", "res://
 # Nucleo, golgi, cloroplastos, Lisossomos, Mitocondria, Peroxissomos, REL, RER, Ribossomos, Proteína, Vacuolo
 # Filamentos, Microfilamentos, Microtubulos
 var estruturas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                        # Guarda quais e quantas estruturas tem
-#var p = protein.instance()
-var mouse_entrou = false
-var drag_enabled = false
+var p = protein.instance()
+
+var selected = false
+var mouse_in = false
 
 func _ready():
-	#p.name = 'Proteína Transmembranar'
-	#$Membrana.add_child(p)
-	#p.position = $Position2D.position + Vector2(-475,0)                         # Seta a posição da proteína
+	p.name = 'Proteína Transmembranar'
+	$Membrana.add_child(p)
+	p.position = $Position2D.position + Vector2(-475,0)                         # Seta a posição da proteína
 	var temp = lista.new()                                                      # Testando add coisas na lista
 	temp.add_lista(1,3,55)
 	temp.add_lista(1, 2, 15)
 	temp.add_lista(2, 5, 75)
 	temp.add_lista(3, 1, 5)
-
-func _input(event : InputEvent):
-	if event is InputEventMouseButton:
-		if event.is_pressed(): 
-			if event.button_index == BUTTON_WHEEL_UP: # zoom in
-				self.scale += Vector2(0.1, 0.1)
-				# call the zoom function
-			if event.button_index == BUTTON_WHEEL_DOWN: # zoom out
-				self.scale -= Vector2(0.1, 0.1)
-				# call the zoom function
-	if mouse_entrou && Input.is_action_pressed("left_click"):
-		self.position = event.position
 
 func voltar_textura():                                                          # Volta a textura para a default
 	$Membrana.play("default", false)
@@ -166,8 +155,37 @@ func carregar_estrutura(index):                                                 
 		_:
 			print("Valor inesperado de index de estrutura")
 
+
+# Movimentação da célula
+
+var grabbed_offset = Vector2()
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed("left_click"):
+		selected = true
+		grabbed_offset = global_position - get_global_mouse_position()
+
+func _physics_process(delta):
+	if selected:
+		global_position = lerp(global_position, get_global_mouse_position() + grabbed_offset, 25 * delta)
+		#global_position = get_global_mouse_position() + grabbed_offset
+
+func _input(event : InputEvent):
+	if event is InputEventMouseButton:
+		if event.is_pressed() and mouse_in: 
+			if event.button_index == BUTTON_WHEEL_UP: # zoom in
+				self.scale += Vector2(0.1, 0.1)
+				# call the zoom function
+			if event.button_index == BUTTON_WHEEL_DOWN: # zoom out
+				self.scale -= Vector2(0.1, 0.1)
+				# call the zoom function
+		elif event.button_index == BUTTON_LEFT and not event.pressed:
+			selected = false
+
+
 func _on_Area2D_mouse_entered():
-	mouse_entrou = true
+	mouse_in = true
+
 
 func _on_Area2D_mouse_exited():
-	mouse_entrou = false
+	mouse_in = false
