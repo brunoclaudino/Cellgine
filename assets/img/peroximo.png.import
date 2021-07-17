@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/membrana_zoom_eucarionte.png-e299cf5ec13be0bc51b13d760572db2f.stex"
+path="res://.import/peroximo.png-36bc06994e016b3daab871b655ac5eeb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/membrana_zoom_eucarionte.png"
-dest_files=[ "res://.import/membrana_zoom_eucarionte.png-e299cf5ec13be0bc51b13d760572db2f.stex" ]
+source_file="res://assets/img/peroximo.png"
+dest_files=[ "res://.import/peroximo.png-36bc06994e016b3daab871b655ac5eeb.stex" ]
 
 [params]
 
