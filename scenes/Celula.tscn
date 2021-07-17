@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/Celula.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/camada 1.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/img/division/divisão0001.png" type="Texture" id=11]
 [ext_resource path="res://assets/img/division/divisão0002.png" type="Texture" id=12]
 [ext_resource path="res://assets/img/division/divisão0005.png" type="Texture" id=13]
+[ext_resource path="res://assets/img/membrana_info.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,14 +22,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "division",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "invisivel",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "division",
 "speed": 5.0
 } ]
 
@@ -45,6 +46,12 @@ script = ExtResource( 1 )
 position = Vector2( 0.505314, 0.770021 )
 frames = SubResource( 1 )
 animation = "division"
+
+[node name="Zoom_membrana" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.0593, 11.6541 )
+scale = Vector2( 0.538523, 0.513788 )
+texture = ExtResource( 14 )
 
 [node name="Nucleo" type="Position2D" parent="."]
 position = Vector2( 0, -373 )

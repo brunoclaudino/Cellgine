@@ -44,8 +44,8 @@ func _on_newCell_pressed():
 	$simulationPanel.add_child(cells.back().cell)
 	cells.back().cell.scale.x = 0.45
 	cells.back().cell.scale.y = 0.45
-	cells.back().cell.get_child(12).get_child(0).scale.y = 0.45
-	cells.back().cell.get_child(12).get_child(0).scale.x = 0.45
+	cells.back().cell.get_child(13).get_child(0).scale.y = 0.45
+	cells.back().cell.get_child(13).get_child(0).scale.x = 0.45
 	$simulationPanel.get_child(0).mudar_pos(Vector2(100, 100), 450, 150)
 	
 

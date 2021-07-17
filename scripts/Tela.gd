@@ -24,7 +24,7 @@ func _ready():
 	temp.construir_estruturas()
 	f = funcs.instance()
 	add_child(f)
-	f.bomba_na_cl(temp, 100)
+	f.bomba_na_cl(temp, 0)
 	
 	#divisao_celular(temp)
 
