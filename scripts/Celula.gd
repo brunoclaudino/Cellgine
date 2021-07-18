@@ -52,6 +52,9 @@ func construir_estruturas():                                                    
 			carregar_estrutura(i)
 		i+=1
 
+func get_golgi_pos():
+	return $Golgi.position
+
 func carregar_estrutura(index):                                                 # Switch para chamada de criação de organelas
 	print("--- Estruturas presentes na célula")
 	match index:

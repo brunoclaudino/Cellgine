@@ -2,6 +2,7 @@ extends Node
 # Script que armazena as funções celulares.
 
 var celula = preload("res://scenes/Celula.tscn")
+var vesicula = preload("res://scenes/Vesicula.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,7 +13,7 @@ func _ready():
 func div_celular(inicial):
 	var pos_inici = inicial.get_position()                                      # Posição em que começou a se dividir
 	var duplicata = celula.instance()                                           # Nova celula
-	add_child(duplicata)                                           # Adiciona ela ao mesmo pai da original
+	add_child(duplicata)                                                        # Adiciona ela ao mesmo pai da original
 	duplicata.membr_invisivel()                                                 # Deixa a membrana da célula invisivel
 	var i = 0
 	for organela in inicial.get_children():
@@ -41,4 +42,18 @@ func bomba_na_cl(celula, quant):
 				return organela.bomba_na_cl(quant)
 
 func exocitose(celula):
-	pass
+	var temp = vesicula.instance()
+	temp.scale = Vector2(0.6, 0.6)
+	temp.position = celula.get_golgi_pos() - Vector2(200, 0)
+	celula.add_child(temp)
+	while temp.position.x < 430:
+		temp.position += Vector2(10, 0)
+		yield(get_tree().create_timer(0.1), "timeout")
+	temp.play_liberar()
+
+func endocitose(celula):
+	var temp = vesicula.instance()
+	temp.scale = Vector2(0.6, 0.6)
+	temp.position = celula.get_golgi_pos() + Vector2(200, 0)
+	celula.add_child(temp)
+	temp.play_absorver()

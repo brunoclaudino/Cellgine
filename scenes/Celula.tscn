@@ -63,7 +63,7 @@ position = Vector2( 26.3196, -179.815 )
 position = Vector2( -63.7292, -91.8531 )
 
 [node name="Golgi" type="Position2D" parent="."]
-position = Vector2( 309.083, 20.1076 )
+position = Vector2( 294.1, 42.5822 )
 
 [node name="Mitocondria" type="Position2D" parent="."]
 position = Vector2( -291.485, 271.966 )
@@ -72,7 +72,7 @@ position = Vector2( -291.485, 271.966 )
 position = Vector2( -2.59082, 374.249 )
 
 [node name="Peroxissomos" type="Position2D" parent="."]
-position = Vector2( 275.8, 283.332 )
+position = Vector2( 155.157, 361.115 )
 
 [node name="Cloroplastos" type="Position2D" parent="."]
 position = Vector2( -163.758, 119.639 )
