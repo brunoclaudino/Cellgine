@@ -141,13 +141,14 @@ var grabbed_offset = Vector2()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("left_click"):
-		selected = true
 		grabbed_offset = global_position - get_global_mouse_position()
 
 func _physics_process(delta):
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position() + grabbed_offset, 25 * delta)
-		#global_position = get_global_mouse_position() + grabbed_offset
+
+func on_click():
+	selected = true
 
 func _input(event : InputEvent):
 	if event is InputEventMouseButton:
