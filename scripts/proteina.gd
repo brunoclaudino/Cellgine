@@ -17,7 +17,7 @@ var devolver = true                                                             
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bomba_na_cl(5)
+	pass
 
 func invisivel():
 	$Textura.play('invisivel')

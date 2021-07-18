@@ -4,7 +4,7 @@ var posicao_pai                          # Em tese vai armazenar a posição do 
 var id
 var nome = 'Cloroplastos'
 var resumo = 'Fotossíntese'
-var descricao = ['Cloroplastos é o mais famoso dos plastos por apresentear a pigmentação verde e ser responsável pela fotossíntese.']
+var descricao = ['Achado em céulas de algas e plantas', 'Cloroplastos é o mais famoso dos plastos por apresentear a pigmentação verde e ser responsável pela fotossíntese.']
 # Variáveis para fazer a caixa de descrição das organelas aparecer
 var caixa_descricao = preload('res://scenes/CaixaInfo.tscn')
 var podefazer = true
