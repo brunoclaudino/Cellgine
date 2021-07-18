@@ -14,6 +14,7 @@ func _ready():
 	var popup = $HBox/Margin/HBox/extraOptions.get_popup()
 	popup.add_item("Adicionar ação")
 	popup.add_item("Remover célula")
+	popup.connect("id_pressed", self, "_on_item_click")
 	# popup.connect("id_pressed", self, "_on_item_pressed")
 
 func _add_organelle(index):
@@ -71,5 +72,9 @@ func _on_plus_pressed():
 	get_node('/root/Node2D/organelas').visible = true
 	get_node('/root/Node2D').selected_cell = id
 
-func _on_item_click():
-	pass
+func _on_item_click(click_id):
+	match(click_id):
+		0:
+			pass
+		1:
+			get_node('/root/Node2D')._remove_cell(id)
