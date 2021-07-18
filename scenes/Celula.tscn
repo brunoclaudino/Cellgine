@@ -54,40 +54,42 @@ scale = Vector2( 0.538523, 0.513788 )
 texture = ExtResource( 14 )
 
 [node name="Nucleo" type="Position2D" parent="."]
-position = Vector2( 0, -373 )
+position = Vector2( 61.8196, -240.315 )
 
 [node name="RER" type="Position2D" parent="."]
-position = Vector2( -27.5, -328.5 )
+position = Vector2( 26.3196, -179.815 )
 
 [node name="REL" type="Position2D" parent="."]
-position = Vector2( -90.5, -258 )
+position = Vector2( -63.7292, -91.8531 )
 
 [node name="Golgi" type="Position2D" parent="."]
-position = Vector2( 60.5, 2.5 )
+position = Vector2( 309.083, 20.1076 )
 
 [node name="Mitocondria" type="Position2D" parent="."]
-position = Vector2( -278, 242 )
+position = Vector2( -291.485, 271.966 )
 
 [node name="Lisossomos" type="Position2D" parent="."]
-position = Vector2( -4, 420 )
+position = Vector2( -2.59082, 374.249 )
 
 [node name="Peroxissomos" type="Position2D" parent="."]
-position = Vector2( 316, 266 )
+position = Vector2( 275.8, 283.332 )
 
 [node name="Cloroplastos" type="Position2D" parent="."]
-position = Vector2( -304, 0 )
+position = Vector2( -163.758, 119.639 )
 
 [node name="Vacuolo" type="Position2D" parent="."]
-position = Vector2( 298, -106 )
+position = Vector2( 230.471, -270.403 )
 
 [node name="Proteina" type="Position2D" parent="."]
 position = Vector2( -478.228, 3.17838 )
+
+[node name="Ribossomos" type="Position2D" parent="."]
+position = Vector2( -325.417, -230.173 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
-
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

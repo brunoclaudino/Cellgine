@@ -45,6 +45,6 @@ func _on_BotaoVoltar_pressed():
 
 
 func _on_Fechar_pressed():
-	get_parent().podefazer = true
+	#get_parent().podefazer = true
 	self.queue_free()
 	print('Caixa Fechada')

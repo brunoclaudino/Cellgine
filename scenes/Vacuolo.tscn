@@ -8,6 +8,7 @@ radius = 193.533
 height = 363.34
 
 [node name="Vacuolo" type="Node2D"]
+rotation = -0.888373
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
 

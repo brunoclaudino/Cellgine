@@ -9,9 +9,7 @@ var descricao = ['Funciona como \"Correios\" das células, pois empacota as prot
 'Pode formar o acrossomo da cabeça do espermatozóide, contendo enzimas que ajudarão na penetração do óvulo',
 'Armazena temporariamente algumas proteínas']
 # Variáveis para fazer a caixa de descrição das organelas aparecer
-var mouse_entrou = false
 var caixa_descricao = preload('res://scenes/CaixaInfo.tscn')
-var podefazer = true
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,10 +27,9 @@ func define_posicao_pai(numero):
 
 func _on_Area2D_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		if podefazer:
-			var temp = caixa_descricao.instance()
-			temp.seta_info(nome, resumo, descricao)
-			temp.scale = Vector2(1.5, 1.5)
-			add_child(temp)
-			print('Criou Caixa')
-			podefazer = false
+		var temp = caixa_descricao.instance()
+		temp.seta_info(nome, resumo, descricao)
+		temp.scale = Vector2(0.5, 0.5)
+		temp.position = self.position
+		get_parent().add_child(temp)
+		print('Criou Caixa')

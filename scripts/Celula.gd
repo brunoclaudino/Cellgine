@@ -12,15 +12,11 @@ var inst_organ = ["res://scenes/Nucleo.tscn", "res://scenes/Golgi.tscn", "res://
 # Nucleo, golgi, cloroplastos, Lisossomos, Mitocondria, Peroxissomos, REL, RER, Ribossomos, Proteína, Vacuolo
 # Filamentos, Microfilamentos, Microtubulos
 var estruturas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                        # Guarda quais e quantas estruturas tem
-var p = protein.instance()
 
 var selected = false
 var mouse_in = false
 
 func _ready():
-	p.name = 'Proteína Transmembranar'
-	$Membrana.add_child(p)
-	p.position = $Position2D.position + Vector2(-475,0)                         # Seta a posição da proteína
 	var temp = lista.new()                                                      # Testando add coisas na lista
 	temp.add_lista(1,3,55)
 	temp.add_lista(1, 2, 15)
@@ -64,28 +60,21 @@ func carregar_estrutura(index):                                                 
 			var temp = nucleo.instance()
 			add_child(temp)
 			temp.position = $Nucleo.position
-			temp.get_child(0).scale.y = 0.3
-			temp.get_child(0).scale.x = 0.3
-			temp.get_child(1).get_child(0).scale.y = 0.3
-			temp.get_child(1).get_child(0).scale.x = 0.3
+			temp.scale = Vector2(0.2, 0.2)
 			print("Núcleo adicionado")
 		1:
 			var golgi = load('res://scenes/Golgi.tscn')
 			var temp = golgi.instance()
 			add_child(temp)
 			temp.position = $Golgi.position
-			temp.get_child(0).scale.y = 0.3
-			temp.get_child(0).scale.x = 0.3
-			temp.get_child(1).get_child(0).scale.y = 0.3
-			temp.get_child(1).get_child(0).scale.x = 0.3
+			temp.scale = Vector2(0.2, 0.2)
 			print("Complexo de Golgi adicionado")
 		2:
 			var clorop = load('res://scenes/Cloroplastos.tscn')
 			var temp = clorop.instance()
 			add_child(temp)
 			temp.position = $Cloroplastos.position
-			temp.get_child(0).scale.y = 0.2
-			temp.get_child(0).scale.x = 0.2
+			temp.scale = Vector2(0.15, 0.15)
 			print("Cloroplasto adicionado")
 		3:
 			var liso = load('res://scenes/Lisossomos.tscn')
@@ -98,8 +87,7 @@ func carregar_estrutura(index):                                                 
 			var temp = mito.instance()
 			add_child(temp)
 			temp.position = $Mitocondria.position
-			temp.get_child(0).scale.y = 0.09
-			temp.get_child(0).scale.x = 0.09
+			temp.scale = Vector2(0.1, 0.1)
 			print("Mitocondria adicionada")
 		5:
 			var peri = load('res://scenes/Peroxissomos.tscn')
@@ -112,35 +100,26 @@ func carregar_estrutura(index):                                                 
 			var temp = rel.instance()
 			add_child(temp)
 			temp.position = $REL.position
-			temp.get_child(0).scale.y = 0.3
-			temp.get_child(0).scale.x = 0.3
-			temp.get_child(1).get_child(0).scale.y = 0.3
-			temp.get_child(1).get_child(0).scale.x = 0.3
+			temp.scale = Vector2(0.2, 0.2)
 			print("Retículo Endoplasmático Liso adicionado")
 		7:
 			var rer = load('res://scenes/RER.tscn')
 			var temp = rer.instance()
 			add_child(temp)
 			temp.position = $RER.position
-			temp.get_child(0).scale.y = 0.3
-			temp.get_child(0).scale.x = 0.3
-			temp.get_child(1).get_child(0).scale.y = 0.3
-			temp.get_child(1).get_child(1).scale.y = 0.3
-			temp.get_child(1).get_child(2).scale.y = 0.3
-			temp.get_child(1).get_child(0).scale.x = 0.3
-			temp.get_child(1).get_child(1).scale.x = 0.3
-			temp.get_child(1).get_child(2).scale.x = 0.3
+			temp.scale = Vector2(0.2, 0.2)
 			print("Retículo Endoplasmático Rugoso adicionado")
 		8:
 			var ribo = load('res://scenes/Ribossomos.tscn')
 			var temp = ribo.instance()
 			add_child(temp)
-			temp.position = $Position2D.position + Vector2(-20, 0)
+			temp.position = $Ribossomos.position
 			print("Ribossomo adicionado")
 		9:
 			var vac = load('res://scenes/Vacuolo.tscn')
 			var temp = vac.instance()
 			add_child(temp)
+			temp.scale = Vector2(0.3, 0.3)
 			temp.position = $Vacuolo.position
 			print("Vacúolo adicionado")
 		10:

@@ -1,4 +1,5 @@
 extends Node
+
 var textura_potassio = preload("res://assets/img/potassio.png")
 var textura_sodio = preload("res://assets/img/sodio.png")
 var id
@@ -9,8 +10,7 @@ var descricao = ['Proteínas Trabsmembranares atravessam toda a membrana plasmá
 'Através delas acontece a Bomba de sódio-potássio.',
 'Pelas proteínas também podem passar moléculas maiores e elétrons']
 # Variáveis para fazer a caixa de descrição das organelas aparecer
-var caixa_descricao
-var podefazer = true
+var caixa_descricao = preload('res://scenes/CaixaInfo.tscn')
 var tipo_anim
 var devolver = true                                                             # Variável que define se vai ser feito a animação de devolução de Na+ e K
 
@@ -121,3 +121,13 @@ func _on_Textura_frame_changed():
 			add_child(s3)
 			devolve_nas(s1, s2, s3)
 
+
+
+func _on_Area2D_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		var temp = caixa_descricao.instance()
+		temp.seta_info(nome, resumo, descricao)
+		temp.scale = Vector2(0.5, 0.5)
+		temp.position = self.position
+		get_parent().add_child(temp)
+		print('Criou Caixa')
