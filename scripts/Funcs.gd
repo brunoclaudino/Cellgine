@@ -33,36 +33,36 @@ func div_celular(inicial):
 	for organela in inicial.get_children():
 		organela.visible = true
 
-func bomba_na_cl(celula, quant):
+func bomba_na_cl(cell, quant):
 	print('Na função de bomba do SCRIPT')
-	for organela in celula.get_children():
+	for organela in cell.get_children():
 		if not organela.get('nome') == null:
 			if organela.nome == 'Proteína Transmembranar':
 				print("É uma proteína")
 				return organela.bomba_na_cl(quant)
 
-func exocitose(celula):
+func exocitose(cell):
 	var temp = vesicula.instance()
 	temp.scale = Vector2(0.6, 0.6)
-	temp.position = celula.get_golgi_pos() - Vector2(200, 0)
-	celula.add_child(temp)
+	temp.position = cell.get_golgi_pos() - Vector2(200, 0)
+	cell.add_child(temp)
 	while temp.position.x < 430:
 		temp.position += Vector2(10, 0)
 		yield(get_tree().create_timer(0.1), "timeout")
 	temp.play_liberar()
 
-func endocitose(celula):
+func endocitose(cell):
 	var temp = vesicula.instance()
 	temp.scale = Vector2(0.6, 0.6)
-	temp.position = celula.get_golgi_pos() + Vector2(200, 0)
-	celula.add_child(temp)
+	temp.position = cell.get_golgi_pos() + Vector2(200, 0)
+	cell.add_child(temp)
 	temp.play_absorver()
 
-func envelopamento(celula):
+func envelopamento(cell):
 	var temp = vesicula.instance()
 	temp.scale = Vector2(0.4, 0.4)
-	temp.position = celula.get_golgi_pos() + Vector2(0, 50)
-	celula.add_child(temp)
+	temp.position = cell.get_golgi_pos() + Vector2(0, 50)
+	cell.add_child(temp)
 	while temp.position.x < 440:
 		temp.position += Vector2(10, 0)
 		yield(get_tree().create_timer(0.1), "timeout")

@@ -341,7 +341,6 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control0/Button" to="." method="_add_nucleo"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control1/Button" to="." method="_add_complexo_golgi"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control2/Button" to="." method="_add_cloroplasto"]
