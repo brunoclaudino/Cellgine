@@ -57,3 +57,13 @@ func endocitose(celula):
 	temp.position = celula.get_golgi_pos() + Vector2(200, 0)
 	celula.add_child(temp)
 	temp.play_absorver()
+
+func envelopamento(celula):
+	var temp = vesicula.instance()
+	temp.scale = Vector2(0.4, 0.4)
+	temp.position = celula.get_golgi_pos() + Vector2(0, 50)
+	celula.add_child(temp)
+	while temp.position.x < 440:
+		temp.position += Vector2(10, 0)
+		yield(get_tree().create_timer(0.1), "timeout")
+	temp.play_liberar()
