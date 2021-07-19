@@ -38,8 +38,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 273.639
-height = 185.487
+radius = 185.125
+height = 300.971
 
 [node name="Proteina" type="Node2D"]
 scale = Vector2( 0.1, 0.1 )
@@ -55,6 +55,7 @@ frames = SubResource( 1 )
 position = Vector2( 7.43259, -43.1088 )
 rotation = -1.5708
 shape = SubResource( 2 )
+
 [connection signal="animation_finished" from="Textura" to="." method="_on_Textura_animation_finished"]
 [connection signal="frame_changed" from="Textura" to="." method="_on_Textura_frame_changed"]
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

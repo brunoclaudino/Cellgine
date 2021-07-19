@@ -19,7 +19,7 @@ func _ready():
 
 func _add_organelle(index):
 	cell.add_estrutura(index)
-	cell.construir_estruturas()
+	cell.carregar_estrutura(index)
 	$VBox.add_child(tree_item.instance())
 	$VBox.get_child($VBox.get_child_count() - 1).item_id = item_id
 	$VBox.visible = expandedState
@@ -69,12 +69,14 @@ func _on_expand_pressed():
 
 
 func _on_plus_pressed():
-	get_node('/root/Node2D/organelas').visible = true
 	get_node('/root/Node2D').selected_cell = id
+	get_node('/root/Node2D')._adicionar_organela()
+
 
 func _on_item_click(click_id):
 	match(click_id):
 		0:
-			pass
+			get_node('/root/Node2D').selected_cell = id
+			get_node('/root/Node2D')._mostrar_acoes()
 		1:
 			get_node('/root/Node2D')._remove_cell(id)

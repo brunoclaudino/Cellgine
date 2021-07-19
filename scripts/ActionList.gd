@@ -29,3 +29,41 @@ func iniciar_timer(tempMax):
 	timer.set_wait_time(10)
 	yield(timer,"timeout")
 
+
+
+func _nova_div_celular():
+	var cell = get_node('/root/Node2D').cells[get_node('/root/Node2D').selected_cell].cell
+	_on_close_pressed()
+	get_node('/root/Node2D').funcoes.div_celular(cell)
+
+
+func _nova_bomba_NaK():
+	var cell = get_node('/root/Node2D').cells[get_node('/root/Node2D').selected_cell].cell
+	_on_close_pressed()
+	get_node('/root/Node2D').funcoes.bomba_na_cl(cell, 2)
+
+
+func _nova_endocitose():
+	var cell = get_node('/root/Node2D').cells[get_node('/root/Node2D').selected_cell].cell
+	_on_close_pressed()
+	get_node('/root/Node2D').funcoes.exocitose(cell)
+
+
+func _nova_exocitose():
+	pass # Replace with function body.
+
+
+func _on_close_pressed():
+	get_node('/root/Node2D/acoes').visible = false
+	get_tree().paused = false
+
+func _mostrar_empacot_prot(aux):
+	$Control/ScrollContainer/VBoxContainer/Control5.visible = aux
+
+
+func _mostrar_bomba_sodio_potassio(aux):
+	$Control/ScrollContainer/VBoxContainer/Control2.visible = aux
+
+
+func _novo_empacot_prot():
+	pass # Replace with function body.

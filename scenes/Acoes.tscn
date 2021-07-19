@@ -1,0 +1,190 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/img/X.png" type="Texture" id=1]
+[ext_resource path="res://assets/styles/scrollcontainer.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/styles/textFontStyle.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/styles/fontStyle.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/styles/scrollcontainerTheme.tres" type="Theme" id=5]
+[ext_resource path="res://scripts/ActionList.gd" type="Script" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.282353, 0.792157, 0.894118, 1 )
+
+[node name="acoes" type="Node2D"]
+position = Vector2( 296.946, 159.778 )
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -297.0
+margin_top = -160.0
+margin_right = 1069.0
+margin_bottom = 609.0
+color = Color( 0, 0, 0, 0.694118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 152.0
+margin_top = 121.0
+margin_right = 652.0
+margin_bottom = 347.0
+custom_styles/panel = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_left = 152.224
+margin_top = 120.642
+margin_right = 654.224
+margin_bottom = 310.642
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="Control"]
+margin_left = 151.922
+margin_top = 6.0
+margin_right = 381.922
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Adicionar nova ação"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="line" type="Panel" parent="Control"]
+anchor_top = -0.000235653
+anchor_bottom = -0.000235653
+margin_left = -1.0
+margin_top = 39.0921
+margin_right = 501.0
+margin_bottom = 43.0921
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+margin_top = 47.0
+margin_right = 495.0
+margin_bottom = 217.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+margin_right = 232.0
+margin_bottom = 168.0
+custom_constants/separation = 2
+
+[node name="Control" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_right = 232.0
+margin_bottom = 32.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control"]
+margin_right = 232.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Divisão celular"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 232.0
+margin_bottom = 66.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control2"]
+margin_right = 232.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Bomba de sódio-potássio"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control3" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 232.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control3"]
+margin_right = 232.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Endocitose"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control4" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 102.0
+margin_right = 232.0
+margin_bottom = 134.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control4"]
+margin_right = 232.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Exocitose"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control5" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 136.0
+margin_right = 232.0
+margin_bottom = 168.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control5"]
+margin_right = 232.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Empacotamento de proteínas"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="close" type="TextureButton" parent="Control"]
+margin_left = 468.0
+margin_top = 11.0
+margin_right = 487.0
+margin_bottom = 29.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control/Button" to="." method="_nova_div_celular"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control2/Button" to="." method="_nova_bomba_NaK"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control3/Button" to="." method="_nova_endocitose"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control4/Button" to="." method="_nova_exocitose"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control5/Button" to="." method="_novo_empacot_prot"]
+[connection signal="pressed" from="Control/close" to="." method="_on_close_pressed"]

@@ -2,35 +2,16 @@ extends Node2D
 
 var cell_tree = preload("res://scenes/cell_tree.tscn")
 
+var funcs = preload("res://scenes/Funcs.tscn")
 var cells = []
 var celula = preload("res://scenes/Celula.tscn")
-
+var funcoes = funcs.instance()
 var selected_cell = -1
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	add_child(funcoes)
 
-
-func divisao_celular(inicial):                                                  # Procedimento de divisão
-	var pos_inici = inicial.get_position()                                      # Posição em que começou a se dividir
-	var duplicata = celula.instance()                                           # Nova celula
-	$simulationPanel.add_child(duplicata)                                                        # Adiciona ela ao mesmo pai da original
-	duplicata.membr_invisivel()                                                 # Deixa a membrana da célula invisivel
-	duplicata.get_child(1).scale.x = 0.45
-	duplicata.get_child(1).scale.y = 0.45
-	var i = 0
-	inicial.anima_divisao()
-	while i < 20:
-		yield(get_tree().create_timer(0.1), "timeout")
-		i+=1
-	inicial.mudar_pos(pos_inici, -250, 0)
-	duplicata.mudar_pos(pos_inici, 250, 0)
-	inicial.voltar_textura()
-	duplicata.voltar_textura()                                                  # Deixa a membrana visivel
-	duplicata.estruturas = inicial.copiar_estruturas()
-	duplicata.construir_estruturas()
-
-
+# Método que adiciona uma nova célula na cena
 func _on_newCell_pressed():
 	cells.append(cell_tree.instance())
 	cells.back().get_child(0).get_child(1).set_text(str("Célula ", cells.size()))
@@ -44,6 +25,7 @@ func _on_newCell_pressed():
 	$simulationPanel.get_child(0).mudar_pos(Vector2(100, 100), 450, 150)
 
 
+# Método que remove uma célula da cena, a qual corresponde ao id recebido por parâmetro
 func _remove_cell(id):
 	if id != cells.size() - 1:
 		for i in range(id + 1, cells.size()):
@@ -51,9 +33,23 @@ func _remove_cell(id):
 	cells[id].cell.free()
 	cells[id].queue_free()
 	cells.remove(id)
-	print("Removi o id: " + str(id))
-	print(cells.size())
 
+# Ordem dos itens em estruturas:
+# 0: Nucleo, 1: Complexo de golgi, 2: Cloroplastos
+# 3: Lisossomos, 4: Mitocondria, 5: Peroxissomos, 6: REL, 7: RER, 8: Ribossomos, 
+# 9: Vacuolo, 10: Proteína, 11: Filamentos, 12: Microfilamentos, 13: Microtubulos
+func _mostrar_acoes():
+	$acoes._mostrar_empacot_prot(cells[selected_cell].cell.estruturas[1] > 0)
+	$acoes. _mostrar_bomba_sodio_potassio(cells[selected_cell].cell.estruturas[10] > 0)
+	$acoes.visible = true
+	get_tree().paused = true
 
-func _on_newSimulation_pressed():
-	divisao_celular(cells.back().cell)
+# Ordem dos itens em estruturas:
+# 0: Nucleo, 1: Complexo de golgi, 2: Cloroplastos
+# 3: Lisossomos, 4: Mitocondria, 5: Peroxissomos, 6: REL, 7: RER, 8: Ribossomos, 
+# 9: Vacuolo, 10: Proteína, 11: Filamentos, 12: Microfilamentos, 13: Microtubulos
+func _adicionar_organela():
+	for i in range(0, cells[selected_cell].cell.estruturas.size()):
+		$organelas.toggle_visibility(i, cells[selected_cell].cell.estruturas[i] == 0)
+	$organelas.visible = true
+	get_tree().paused = true

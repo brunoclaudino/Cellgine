@@ -15,8 +15,8 @@ position = Vector2( 296.946, 159.778 )
 script = ExtResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -300.0
-margin_top = -165.0
+margin_left = -297.0
+margin_top = -160.0
 margin_right = 1069.0
 margin_bottom = 609.0
 color = Color( 0, 0, 0, 0.694118 )
@@ -75,52 +75,16 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
-margin_right = 248.0
-margin_bottom = 508.0
+margin_right = 252.0
+margin_bottom = 474.0
 custom_constants/separation = 2
 
-[node name="Control" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_right = 248.0
+[node name="Control0" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_right = 252.0
 margin_bottom = 32.0
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control"]
-margin_right = 248.0
-margin_bottom = 32.0
-mouse_default_cursor_shape = 2
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Cloroplasto"
-flat = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control2" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 34.0
-margin_right = 248.0
-margin_bottom = 66.0
-
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control2"]
-margin_right = 248.0
-margin_bottom = 32.0
-mouse_default_cursor_shape = 2
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Mitocôndria"
-flat = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control3" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 68.0
-margin_right = 248.0
-margin_bottom = 100.0
-
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control3"]
-margin_right = 248.0
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control0"]
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
@@ -132,13 +96,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control4" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="Control1" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 252.0
+margin_bottom = 66.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control1"]
+margin_right = 252.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Complexo de golgi"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 252.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control2"]
+margin_right = 252.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cloroplastos"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control3" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
 margin_top = 102.0
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 134.0
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control4"]
-margin_right = 248.0
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control3"]
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
@@ -150,18 +150,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control5" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="Control4" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
 margin_top = 136.0
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 168.0
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control5"]
-margin_right = 248.0
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control4"]
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Retículo endoplasmático rugoso"
+text = "Mitocondria"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control5" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 170.0
+margin_right = 252.0
+margin_bottom = 202.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control5"]
+margin_right = 252.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Peroxissomo"
 flat = true
 align = 0
 __meta__ = {
@@ -169,17 +187,17 @@ __meta__ = {
 }
 
 [node name="Control6" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 170.0
-margin_right = 248.0
-margin_bottom = 202.0
+margin_top = 204.0
+margin_right = 252.0
+margin_bottom = 236.0
 
 [node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control6"]
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Retículo endoplasmático liso"
+text = "Retículo Endoplasmático Liso"
 flat = true
 align = 0
 __meta__ = {
@@ -187,17 +205,17 @@ __meta__ = {
 }
 
 [node name="Control7" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 204.0
-margin_right = 248.0
-margin_bottom = 236.0
+margin_top = 238.0
+margin_right = 252.0
+margin_bottom = 270.0
 
 [node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control7"]
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Complexo de Golgi"
+text = "Retículo Endoplasmático Rugoso"
 flat = true
 align = 0
 __meta__ = {
@@ -205,12 +223,30 @@ __meta__ = {
 }
 
 [node name="Control8" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 238.0
-margin_right = 248.0
-margin_bottom = 270.0
+margin_top = 272.0
+margin_right = 252.0
+margin_bottom = 304.0
 
 [node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control8"]
-margin_right = 248.0
+margin_right = 252.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ribossomos"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control9" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+margin_top = 306.0
+margin_right = 252.0
+margin_bottom = 338.0
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control9"]
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
@@ -222,36 +258,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control9" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 272.0
-margin_right = 248.0
-margin_bottom = 304.0
-
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control9"]
-margin_right = 248.0
-margin_bottom = 32.0
-mouse_default_cursor_shape = 2
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Peroxissomos"
-flat = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Control10" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 306.0
-margin_right = 248.0
-margin_bottom = 338.0
+margin_top = 340.0
+margin_right = 252.0
+margin_bottom = 372.0
 
 [node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control10"]
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Plasmídeo"
+text = "Proteína"
 flat = true
 align = 0
 __meta__ = {
@@ -259,17 +277,17 @@ __meta__ = {
 }
 
 [node name="Control11" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 340.0
-margin_right = 248.0
-margin_bottom = 372.0
+margin_top = 374.0
+margin_right = 252.0
+margin_bottom = 406.0
 
 [node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control11"]
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Molécula de Na+"
+text = "Filamentos"
 flat = true
 align = 0
 __meta__ = {
@@ -277,17 +295,17 @@ __meta__ = {
 }
 
 [node name="Control12" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 374.0
-margin_right = 248.0
-margin_bottom = 406.0
+margin_top = 408.0
+margin_right = 252.0
+margin_bottom = 440.0
 
 [node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control12"]
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Molécula de Cl-"
+text = "Microfilamentos"
 flat = true
 align = 0
 __meta__ = {
@@ -295,53 +313,17 @@ __meta__ = {
 }
 
 [node name="Control13" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 408.0
-margin_right = 248.0
-margin_bottom = 440.0
-
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control13"]
-margin_right = 248.0
-margin_bottom = 32.0
-mouse_default_cursor_shape = 2
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Molécula de K"
-flat = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control14" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
 margin_top = 442.0
-margin_right = 248.0
+margin_right = 252.0
 margin_bottom = 474.0
 
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control14"]
-margin_right = 248.0
+[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control13"]
+margin_right = 252.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Molécula de P"
-flat = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control15" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
-margin_top = 476.0
-margin_right = 248.0
-margin_bottom = 508.0
-
-[node name="Button" type="Button" parent="Control/ScrollContainer/VBoxContainer/Control15"]
-margin_right = 248.0
-margin_bottom = 32.0
-mouse_default_cursor_shape = 2
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "DNA"
+text = "Microtúbulos"
 flat = true
 align = 0
 __meta__ = {
@@ -360,19 +342,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control/Button" to="." method="_add_cloroplasto"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control2/Button" to="." method="_add_mitocondria"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control3/Button" to="." method="_add_nucleo"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control4/Button" to="." method="_add_lisossomo"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control5/Button" to="." method="_add_ret_end_rugo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control0/Button" to="." method="_add_nucleo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control1/Button" to="." method="_add_complexo_golgi"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control2/Button" to="." method="_add_cloroplasto"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control3/Button" to="." method="_add_lisossomo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control4/Button" to="." method="_add_mitocondria"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control5/Button" to="." method="_add_peroxissomo"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control6/Button" to="." method="_add_ret_end_liso"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control7/Button" to="." method="__add_comp_golgi"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control8/Button" to="." method="_add_vacuolo"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control9/Button" to="." method="_add_peroxissomo"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control10/Button" to="." method="_add_plasmideo"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control11/Button" to="." method="_add_na+"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control12/Button" to="." method="_add_cl_menos"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control13/Button" to="." method="_add_k"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control14/Button" to="." method="_add_p"]
-[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control15/Button" to="." method="_add_dna"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control7/Button" to="." method="_add_ret_end_rugoso"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control8/Button" to="." method="_add_ribossomo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control9/Button" to="." method="_add_vacuolo"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control10/Button" to="." method="_add_proteina"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control11/Button" to="." method="_add_filamentos"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control12/Button" to="." method="_add_microfilamentos"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/Control13/Button" to="." method="_add_microtubulos"]
 [connection signal="pressed" from="Control/close" to="." method="_on_close_pressed"]
