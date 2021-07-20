@@ -21,6 +21,7 @@ func _ready():
 	temp.add_estrutura(5)
 	temp.add_estrutura(8)
 	temp.add_estrutura(9)
+	temp.add_estrutura(11)
 	temp.construir_estruturas()
 	f = funcs.instance()
 	add_child(f)

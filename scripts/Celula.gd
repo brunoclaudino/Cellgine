@@ -131,7 +131,12 @@ func carregar_estrutura(index):                                                 
 			temp.position = $Proteina.position
 			print("Proteína adicionada")
 		11:
-			pass
+			var dna = load('res://scenes/DNA.tscn')
+			var temp = dna.instance()
+			add_child(temp)
+			temp.scale = Vector2(0.08, 0.08)
+			temp.position = $Nucleo.position
+			print("DNA adicionada")
 		12:
 			pass
 		_:
