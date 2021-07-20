@@ -8,6 +8,8 @@ var id
 var cell
 var item_id = 1
 var theme_item = preload("res://assets/styles/treeItemSelected.tres")
+var type1 # Indica se é procarionte ou eucarionte
+var type2 # Caso seja eucarionte, indica se a célula é animal ou vegetal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
