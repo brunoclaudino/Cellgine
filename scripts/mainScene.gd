@@ -63,7 +63,9 @@ func _mostrar_acoes():
 # Ordem dos itens em estruturas de uma célula procarionte:
 # 0: DNA, 1: Plasmídeos, 2: Ribossomos
 func _adicionar_organela():
-	for i in range(0, cells[selected_cell].cell.estruturas.size()):
-		$organelas.toggle_visibility(i, cells[selected_cell].cell.estruturas[i] == 0)
-	$organelas.visible = true
-	#get_tree().paused = true
+	# Colocar filtragem para organelas de célula procarionte
+	if cells[selected_cell].type1 == "eucarionte":
+		for i in range(0, cells[selected_cell].cell.estruturas.size()):
+			$organelas.toggle_visibility(i, cells[selected_cell].cell.estruturas[i] == 0)
+		$organelas.visible = true
+		get_tree().paused = true
