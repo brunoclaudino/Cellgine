@@ -13,6 +13,7 @@ func _ready():
 func div_celular(inicial):
 	var pos_inici = inicial.get_position()                                      # Posição em que começou a se dividir
 	var duplicata = celula.instance()                                           # Nova celula
+	var dna
 	add_child(duplicata)                                                        # Adiciona ela ao mesmo pai da original
 	duplicata.membr_invisivel()                                                 # Deixa a membrana da célula invisivel
 	var i = 0
@@ -20,6 +21,17 @@ func div_celular(inicial):
 		if not organela.get('nome') == null:
 			if not organela.nome in ['DNA', 'Membrana']:
 				organela.visible = false
+			elif organela.nome == 'DNA':
+				dna = organela
+	if not dna == null:
+		dna.get_node('Textura').play('cromossomo', false)
+		var x = 0
+		while x < 100:
+			dna.position += Vector2(0, 1.7)
+			dna.scale += Vector2(0.007, 0.007)
+			x += 1
+			yield(get_tree().create_timer(0.01), "timeout")
+		yield(get_tree().create_timer(8), "timeout")
 	inicial.anima_divisao()
 	while i < 20:
 		yield(get_tree().create_timer(0.1), "timeout")
@@ -27,6 +39,9 @@ func div_celular(inicial):
 	inicial.mudar_pos(pos_inici, -300, 0)
 	duplicata.mudar_pos(pos_inici, 300, 0)
 	inicial.voltar_textura()
+	dna.position = inicial.get_node('Nucleo').position
+	dna.scale = Vector2(0.08, 0.08)
+	dna.voltar_default()
 	duplicata.voltar_textura()                                                  # Deixa a membrana visivel
 	duplicata.estruturas = inicial.copiar_estruturas()
 	duplicata.construir_estruturas()
