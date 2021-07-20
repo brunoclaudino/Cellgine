@@ -18,7 +18,7 @@ func div_celular(inicial):
 	var i = 0
 	for organela in inicial.get_children():
 		if not organela.get('nome') == null:
-			if not organela.nome in ['DNA', 'Membrana', 'Nucleo']:
+			if not organela.nome in ['DNA', 'Membrana']:
 				organela.visible = false
 	inicial.anima_divisao()
 	while i < 20:
@@ -31,7 +31,8 @@ func div_celular(inicial):
 	duplicata.estruturas = inicial.copiar_estruturas()
 	duplicata.construir_estruturas()
 	for organela in inicial.get_children():
-		organela.visible = true
+		if not organela.name == 'Zoom_membrana':
+			organela.visible = true
 
 func bomba_na_cl(cell, quant):
 	print('Na função de bomba do SCRIPT')
