@@ -86,6 +86,9 @@ position = Vector2( -478.228, 3.17838 )
 [node name="Ribossomos" type="Position2D" parent="."]
 position = Vector2( -325.417, -230.173 )
 
+[node name="Center" type="Position2D" parent="."]
+position = Vector2( 0.00274658, 0.0282269 )
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

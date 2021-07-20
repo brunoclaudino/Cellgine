@@ -16,6 +16,11 @@ var estruturas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]                     
 var selected = false
 var mouse_in = false
 
+export var allow_movement = true
+export var allow_zoom = true
+export var resize_organelles = true
+export var center_organelle = false
+
 func _ready():
 	var temp = lista.new()                                                      # Testando add coisas na lista
 	temp.add_lista(1,3,55)
@@ -62,80 +67,124 @@ func carregar_estrutura(index):                                                 
 			var nucleo = load('res://scenes/Nucleo.tscn')
 			var temp = nucleo.instance()
 			add_child(temp)
-			temp.position = $Nucleo.position
-			temp.scale = Vector2(0.2, 0.2)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Nucleo.position
+			if resize_organelles:
+				temp.scale = Vector2(0.2, 0.2)
 			print("Núcleo adicionado")
 		1:
 			var golgi = load('res://scenes/Golgi.tscn')
 			var temp = golgi.instance()
 			add_child(temp)
-			temp.position = $Golgi.position
-			temp.scale = Vector2(0.2, 0.2)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Golgi.position
+			if resize_organelles:
+				temp.scale = Vector2(0.2, 0.2)
 			print("Complexo de Golgi adicionado")
 		2:
 			var clorop = load('res://scenes/Cloroplastos.tscn')
 			var temp = clorop.instance()
 			add_child(temp)
-			temp.position = $Cloroplastos.position
-			temp.scale = Vector2(0.15, 0.15)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Cloroplastos.position
+			if resize_organelles:
+				temp.scale = Vector2(0.15, 0.15)
 			print("Cloroplasto adicionado")
 		3:
 			var liso = load('res://scenes/Lisossomos.tscn')
 			var temp = liso.instance()
 			add_child(temp)
-			temp.position = $Lisossomos.position
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Lisossomos.position
 			print("Lisossomo adicionado")
 		4:
 			var mito = load('res://scenes/Mitocondria.tscn')
 			var temp = mito.instance()
 			add_child(temp)
-			temp.position = $Mitocondria.position
-			temp.scale = Vector2(0.1, 0.1)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Mitocondria.position
+			if resize_organelles:
+				temp.scale = Vector2(0.1, 0.1)
 			print("Mitocondria adicionada")
 		5:
 			var peri = load('res://scenes/Peroxissomos.tscn')
 			var temp = peri.instance()
 			add_child(temp)
-			temp.position = $Peroxissomos.position
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Peroxissomos.position
 			print("Peroxissomo adicionado")
 		6:
 			var rel = load('res://scenes/REL.tscn')
 			var temp = rel.instance()
 			add_child(temp)
-			temp.position = $REL.position
-			temp.scale = Vector2(0.2, 0.2)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $REL.position
+			if resize_organelles:
+				temp.scale = Vector2(0.2, 0.2)
 			print("Retículo Endoplasmático Liso adicionado")
 		7:
 			var rer = load('res://scenes/RER.tscn')
 			var temp = rer.instance()
 			add_child(temp)
-			temp.position = $RER.position
-			temp.scale = Vector2(0.2, 0.2)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $RER.position
+			if resize_organelles:
+				temp.scale = Vector2(0.2, 0.2)
 			print("Retículo Endoplasmático Rugoso adicionado")
 		8:
 			var ribo = load('res://scenes/Ribossomos.tscn')
 			var temp = ribo.instance()
 			add_child(temp)
-			temp.position = $Ribossomos.position
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Ribossomos.position
 			print("Ribossomo adicionado")
 		9:
 			var vac = load('res://scenes/Vacuolo.tscn')
 			var temp = vac.instance()
 			add_child(temp)
-			temp.scale = Vector2(0.3, 0.3)
-			temp.position = $Vacuolo.position
+			if resize_organelles:
+				temp.scale = Vector2(0.3, 0.3)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Vacuolo.position
 			print("Vacúolo adicionado")
 		10:
 			var temp = protein.instance()
 			add_child(temp)
-			temp.position = $Proteina.position
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Proteina.position
 			print("Proteína adicionada")
 		11:
 			var dna = load('res://scenes/DNA.tscn')
 			var temp = dna.instance()
 			add_child(temp)
-			temp.scale = Vector2(0.08, 0.08)
-			temp.position = $Nucleo.position
+			if resize_organelles:
+				temp.scale = Vector2(0.08, 0.08)
+			if center_organelle:
+				temp.position = $Center.position
+			else:
+				temp.position = $Nucleo.position
 			print("DNA adicionada")
 		12:
 			pass
@@ -152,7 +201,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		grabbed_offset = global_position - get_global_mouse_position()
 
 func _physics_process(delta):
-	if selected:
+	if selected and allow_movement:
 		global_position = lerp(global_position, get_global_mouse_position() + grabbed_offset, 25 * delta)
 
 func on_click():
@@ -160,7 +209,7 @@ func on_click():
 
 func _input(event : InputEvent):
 	if event is InputEventMouseButton:
-		if event.is_pressed() and mouse_in: 
+		if event.is_pressed() and mouse_in and allow_zoom: 
 			if event.button_index == BUTTON_WHEEL_UP: # zoom in
 				self.scale += Vector2(0.1, 0.1)
 				# call the zoom function
