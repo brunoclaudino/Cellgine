@@ -231,6 +231,12 @@ func _after_refil():
 					return
 	state = move
 	move_checked = false
+#	var dialog = AcceptDialog.new()
+#	dialog.dialog_text = "Indique corretamente o tipo de célula que deseja adicionar a simulação"
+#	dialog.window_title = "Erro!"
+#	dialog.connect('modal_closed', dialog, 'queue_free')
+#	get_parent().add_child(dialog)
+#	dialog.popup_centered()
 
 # Desfaz o movimento das peças, caso um match não seja encontrado
 func swipe_back():

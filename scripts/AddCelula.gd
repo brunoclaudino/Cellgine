@@ -56,6 +56,7 @@ func _on_adicionar_pressed():
 
 func _on_close_pressed():
 	get_node('/root/Node2D/novaCelula').visible = false
+	get_tree().paused = false
 	firstSelection = "none"
 	secondSelection = "none"
 	$procarionte.set("custom_styles/normal", normalTheme)

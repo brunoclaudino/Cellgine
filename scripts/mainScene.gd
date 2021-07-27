@@ -15,6 +15,7 @@ func _ready():
 # Método que adiciona uma nova célula na cena
 func _on_newCell_pressed():
 	$novaCelula.visible = true
+	get_tree().paused = true
 
 func _addCell(type1, type2):
 	cells.append(cell_tree.instance())
@@ -28,7 +29,7 @@ func _addCell(type1, type2):
 		cells.back().cell = celula_eucarionte.instance()
 		### Em tese, a parede vegetal deveria ser adicionada aqui
 		if(type2 == "vegetal"):
-			pass
+			cells.back().cell.get_node("ParedeCelular").visible = true
 	else:
 		cells.back().cell = celula_procarionte.instance()
 	$simulationPanel.add_child(cells.back().cell)
