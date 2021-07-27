@@ -71,7 +71,7 @@ func carregar_estrutura(index):                                                 
 
 var grabbed_offset = Vector2()
 
-func _on_Area2D_input_event(viewport, event, shape_idx):
+func _on_Area2D_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_just_pressed("left_click"):
 		grabbed_offset = global_position - get_global_mouse_position()
 

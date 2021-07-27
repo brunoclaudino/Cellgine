@@ -98,6 +98,5 @@ margin_top = 64.0
 margin_right = 194.0
 margin_bottom = 64.0
 custom_constants/separation = 0
-
 [connection signal="pressed" from="HBox/expand" to="." method="_on_expand_pressed"]
 [connection signal="pressed" from="HBox/Margin/HBox/plus" to="." method="_on_plus_pressed"]

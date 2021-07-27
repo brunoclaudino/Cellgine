@@ -25,9 +25,9 @@ func _add_organelle(index):
 	$VBox.add_child(tree_item.instance())
 	$VBox.get_child($VBox.get_child_count() - 1).item_id = item_id
 	$VBox.visible = expandedState
-	#if item_id == 1:
-	#	$VBox.get_child($VBox.get_child_count() - 1).get_child(0).get_child(0).set("custom_styles/normal", theme_item)
-	#	$VBox.get_child($VBox.get_child_count() - 1).get_child(0).get_child(0).flat = false
+	if item_id == 1:
+		$VBox.get_child($VBox.get_child_count() - 1).get_child(0).get_child(0).set("custom_styles/normal", theme_item)
+		$VBox.get_child($VBox.get_child_count() - 1).get_child(0).get_child(0).flat = false
 	item_id += 1
 	match index:
 		0:
@@ -51,7 +51,7 @@ func _add_organelle(index):
 		9:
 			$VBox.get_child($VBox.get_child_count() - 1).get_child(0).get_child(0).text = "Vacúolo"
 		10:
-			pass
+			$VBox.get_child($VBox.get_child_count() - 1).get_child(0).get_child(0).text = "Proteína"
 		11:
 			pass
 		12:
